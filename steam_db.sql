@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `steam_db`.`game_genre_game` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO game (id, name, developer_id, release_date, image, description, storage_space) VALUES
+INSERT INTO game (id_game, name, developer_id, release_date, image, description, storage_space) VALUES
 (1, 'Zaklínač', 1, '1996-09-22', '1.jpg', 'Epická RPG hra plná dobrodružství a magie', 2048),
 (2, 'Cyberpunk 2077', 2, '1997-04-18', '2.jpg', 'Futuristické RPG v otevřeném světě', 4096),
 (3, 'Minecraft', 3, '1997-11-18', '3.jpg', 'Sandbox hra pro budování světů', 8192),
