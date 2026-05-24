@@ -5,21 +5,17 @@
     <div class="p-5 rounded-4 border border-secondary bg-dark text-light hero-bg">
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
-                <span class="badge text-bg-primary mb-3">nejaky projekt idk</span>
+                <span class="badge text-bg-primary mb-3">Školní databázový projekt</span>
                 <h1 class="display-4 fw-bold mb-4">Herní databáze</h1>
-                <p class="lead text-secondary">
-                    Webová aplikace zaměřená na evidenci her, hráčů, achievementů a herních žánrů.
-                </p>
-                <p class="text-secondary">
-                    Projekt využívá MySQL databázi a framework CodeIgniter 4. Databáze obsahuje hry,
-                    obrázky, datum vydání, achievementy a propojení mezi hráči a hrami.
-                </p>
+                <p class="lead text-secondary">Webová aplikace zaměřená na evidenci her, hráčů, achievementů a herních
+                    žánrů.</p>
+                <p class="text-secondary">Projekt využívá MySQL databázi a framework CodeIgniter 4. Databáze obsahuje
+                    hry, obrázky, datum vydání, achievementy a propojení mezi hráči a hrami.</p>
                 <div class="d-flex gap-3 flex-wrap mt-4">
-                    <a href="<?= base_url('/games') ?>" class="btn btn-primary btn-lg">Zobrazit hry</a>
-                    <a href="<?= base_url('/achievements') ?>" class="btn btn-outline-light btn-lg">Achievementy</a>
+                    <a href="<?= site_url('games') ?>" class="btn btn-primary btn-lg">Zobrazit hry</a>
+                    <a href="<?= site_url('achievements') ?>" class="btn btn-outline-light btn-lg">Achievementy</a>
                 </div>
             </div>
-
             <div class="col-lg-5">
                 <div class="card bg-black text-light border-secondary">
                     <div class="card-body p-4">
@@ -36,7 +32,6 @@
         </div>
     </div>
 </section>
-
 <section class="pb-5">
     <div class="row g-4">
         <div class="col-md-4">
@@ -48,7 +43,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card h-100 bg-dark text-light border-secondary">
                 <div class="card-body p-4">
@@ -58,7 +52,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card h-100 bg-dark text-light border-secondary">
                 <div class="card-body p-4">
@@ -73,7 +66,7 @@
 
 <style>
 .hero-bg {
-    background: linear-gradient(135deg, #111, #050505) !important;
+    background: linear-gradient(135deg, #111, #050505) !important
 }
 </style>
 

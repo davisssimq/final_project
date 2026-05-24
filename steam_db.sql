@@ -20954,6 +20954,12 @@ INSERT INTO achievement (id_achievement, name, game_id, number_of_people, descri
 (3132, 'Astro Bot: Completion Run', 261, 103509, 'Protect the last checkpoint in Astro Bot without losing mission progress. This achievement is awarded for a specific in-game accomplishment, not for simple menu interaction or random play time.');
 
 
+ALTER TABLE game
+ADD created_at DATETIME NULL,
+ADD updated_at DATETIME NULL,
+ADD deleted_at DATETIME NULL;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
