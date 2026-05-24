@@ -26,7 +26,7 @@ class GameController extends BaseController
     ->paginate(9);
 
         return view('games/index', [
-            'title' => 'Games',
+            'title' => 'Hry',
             'games' => $games,
             'pager' => $this->gameModel->pager
         ]);
@@ -35,7 +35,7 @@ class GameController extends BaseController
     public function create()
     {
         return view('games/create', [
-            'title' => 'Add game',
+            'title' => 'Přidání hry',
             'genres' => $this->genreModel->findAll()
         ]);
     }
@@ -58,13 +58,13 @@ class GameController extends BaseController
             'image' => $imageName
         ]);
 
-        return redirect()->to('index.php/games')->with('success', 'Game was updated.');
+        return redirect()->to('/games')->with('success', 'Game was updated.');
     }
 
     public function edit($id)
     {
         return view('games/edit', [
-            'title' => 'Edit game',
+            'title' => 'Úprava hry',
             'game' => $this->gameModel->find($id),
             'genres' => $this->genreModel->findAll()
         ]);
