@@ -35,11 +35,11 @@
                     <?= esc($game['genre_name'] ?? 'Bez žánru') ?>
                 </p>
 
-                <p class="text-secondary small mb-3">
+                <p class="text-secondary small mb-2">
                     <?= esc(substr(strip_tags($game['description']), 0, 110)) ?>...
                 </p>
 
-                <p class="small text-secondary mb-3">
+                <p class="small text-secondary mb-2">
                     Vydáno: <?= esc($game['release_date']) ?>
                 </p>
 
