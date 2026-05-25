@@ -149,10 +149,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" href="<?= site_url('/') ?>">Úvod</a>
-                        <a class="nav-link" href="<?= site_url('games') ?>">Hry</a>
-                        <a class="nav-link" href="<?= site_url('achievements') ?>">Achievementy</a>
-                        <a class="nav-link" href="<?= site_url('players') ?>">Hráči</a>
+                        <a class="nav-link me-5" href="<?= site_url('/') ?>">Úvod</a>
+                        <a class="nav-link me-5" href="<?= site_url('games') ?>">Hry</a>
+                        <a class="nav-link" href="<?= site_url('operating_systems') ?>">Operační systémy</a>
+                        <a class="nav-link" href="">Žánry her</a>
+                        <a class="nav-link" href="">Vývojáři</a>
+                        <a class="nav-link me-5" href="">Hráči</a>
+                        <a class="nav-link" href="">👤</a>
                     </div>
                 </div>
             </div>
