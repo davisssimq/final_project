@@ -1,5 +1,6 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
+<title>Operační systémy</title>
 <div class="row g-4">
 <?php foreach($operacniSystemy as $operacniSystem): ?>
     <div class="col-md-4">

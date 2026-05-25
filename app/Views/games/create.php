@@ -1,6 +1,6 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
-
+<title>Přidání hry</title>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Úvod</a></li>

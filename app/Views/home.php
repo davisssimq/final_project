@@ -1,6 +1,6 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
-
+<title>Domovská stránka</title>
 <section class="py-5">
     <div class="p-5 rounded-4 border border-secondary bg-dark text-light hero-bg">
         <div class="row align-items-center g-5">
