@@ -26,12 +26,17 @@ class Operating_systemController extends BaseController
     public function games($id)
     {
         $databaze = \Config\Database::connect();
-        $builder = $databaze->table('game');
-        $data['hry'] = $builder->select('game.*')
+        $operacniSystemy = $databaze->table('operating_system');
+        $data['operacniSystem'] = $operacniSystemy->select('name')
+        ->where('id_operating_system', $id)
+        ->get()
+        ->getRowArray();
+        //$hry = $databaze->table('game');
+        $data['hry'] = $this->gameModel->select('game.*')
         ->join('operating_system_game', 'operating_system_game.game_id = game.id_game')
         ->where('operating_system_game.operating_system_id', $id)
-        ->get()
-        ->getResultArray();
+        ->paginate(9);
+        $data['strankovani'] = $this->gameModel->pager;
         $data['achievementy'] = $this->achievementModel->findAll();
         return view('operating systems/games', $data);
     }

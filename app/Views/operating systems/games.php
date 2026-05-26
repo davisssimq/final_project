@@ -1,6 +1,7 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 <title>Hry</title>
+<h1 class="fw-bold mb-4">Hry podporované na <?= $operacniSystem['name'] ?></h1>
 <div class="row g-4">
 <?php foreach($hry as $hra): ?>
     <div class="col-md-4">
@@ -42,5 +43,8 @@
         </div>
     </div>
 <?php endforeach; ?>
+</div>
+<div class="mt-4">
+    <?= $strankovani->links('default', 'bootstrap_full') ?>
 </div>
 <?= $this->endSection() ?>
