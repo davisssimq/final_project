@@ -5,7 +5,6 @@
     <div class="p-5 rounded-4 border border-secondary bg-dark text-light hero-bg">
         <div class="row align-items-center g-5">
             <div class="col-lg-8">
-                <span class="badge text-bg-primary mb-3">Školní databázový projekt</span>
                 <h1 class="display-4 fw-bold mb-4">Herní databáze</h1>
                 <p class="lead text-secondary">Webová aplikace zaměřená na evidenci her, hráčů, achievementů a herních
                     žánrů.</p>
