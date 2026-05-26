@@ -4,15 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class GenreModel extends Model
+class Game_genreModel extends Model
 {
-    protected $table='game_genre';
-    protected $primaryKey='id_game_genre';
+    protected $table            = 'game_genre';
+    protected $primaryKey       = 'id_game_genre';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['name','description'];
+    protected $allowedFields = ['name',
+    'description'];
 
 
     protected bool $allowEmptyInserts = false;

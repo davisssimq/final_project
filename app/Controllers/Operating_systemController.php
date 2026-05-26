@@ -31,7 +31,6 @@ class Operating_systemController extends BaseController
         ->where('id_operating_system', $id)
         ->get()
         ->getRowArray();
-        //$hry = $databaze->table('game');
         $data['hry'] = $this->gameModel->select('game.*')
         ->join('operating_system_game', 'operating_system_game.game_id = game.id_game')
         ->where('operating_system_game.operating_system_id', $id)

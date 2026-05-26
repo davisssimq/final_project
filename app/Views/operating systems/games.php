@@ -17,12 +17,11 @@
                 <p class="small text-secondary mb-2">Vydáno: <?= $hra['release_date'] ?></p>
                 <p class="small text-secondary mb-2">Velikost hry: <?= $hra['storage_space'] ?></p>
             </div>
-            <div class="row">
             <?php foreach($achievementy as $achievement):
                 if ($achievement['game_id'] == $hra['id_game'])
                 {
                     ?>
-                        <button class="col-md-6 fw-bold mb-2 btn btn-sm" data-bs-toggle="modal" data-bs-target="#achievement<?= $achievement['id_achievement'] ?>">
+                        <button class="mb-2 btn btn-sm" data-bs-toggle="modal" data-bs-target="#achievement<?= $achievement['id_achievement'] ?>">
                             <?= $achievement['name']; ?>
                         </button>
                         <div class="modal" tabindex="-1" id="achievement<?= $achievement['id_achievement'] ?>">
@@ -39,7 +38,6 @@
                     <?php
                 }
             endforeach; ?>
-            </div>
         </div>
     </div>
 <?php endforeach; ?>

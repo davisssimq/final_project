@@ -2,17 +2,17 @@
 namespace App\Controllers;
 
 use App\Models\GameModel;
-use App\Models\GenreModel;
+use App\Models\Game_genreModel;
 
 class GameController extends BaseController
 {
     protected $gameModel;
-    protected $genreModel;
+    protected $game_genreModel;
 
     public function __construct()
     {
         $this->gameModel = new GameModel();
-        $this->genreModel = new GenreModel();
+        $this->game_genreModel = new Game_genreModel();
     }
 
     public function index()
@@ -36,7 +36,7 @@ class GameController extends BaseController
     {
         return view('games/create', [
             'title' => 'Přidání hry',
-            'genres' => $this->genreModel->findAll()
+            'genres' => $this->game_genreModel->findAll()
         ]);
     }
 
@@ -66,7 +66,7 @@ class GameController extends BaseController
         return view('games/edit', [
             'title' => 'Úprava hry',
             'game' => $this->gameModel->find($id),
-            'genres' => $this->genreModel->findAll()
+            'genres' => $this->game_genreModel->findAll()
         ]);
     }
 

@@ -14,7 +14,7 @@
                 <div class="d-flex gap-3 flex-wrap mt-4">
                     <a href="<?= site_url('games') ?>" class="btn btn-primary btn-lg">Zobrazit hry</a>
                     <a href="<?= site_url('operating_systems') ?>" class="btn btn-outline-light btn-lg">Operační systémy</a>
-                    <a href="" class="btn btn-outline-light btn-lg">Žánry her</a>
+                    <a href="<?= site_url('game_genres') ?>" class="btn btn-outline-light btn-lg">Žánry her</a>
                     <a href="" class="btn btn-outline-light btn-lg">Vývojáři</a>
                     <a href="" class="btn btn-outline-light btn-lg">Hráči</a>
                 </div>

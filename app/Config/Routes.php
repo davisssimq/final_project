@@ -15,3 +15,6 @@ $routes->post('/games/delete/(:num)', 'GameController::delete/$1');
 
 $routes->get('/operating_systems', 'Operating_systemController::index');
 $routes->get('/operating_systems/games/(:num)', 'Operating_systemController::games/$1');
+
+$routes->get('/game_genres', 'Game_genreController::index');
+$routes->get('/game_genres/games/(:num)', 'Game_genreController::games/$1');
