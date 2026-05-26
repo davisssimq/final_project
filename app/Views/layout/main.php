@@ -152,7 +152,7 @@
                         <a class="nav-link me-5" href="<?= site_url('games') ?>">Hry</a>
                         <a class="nav-link" href="<?= site_url('operating_systems') ?>">Operační systémy</a>
                         <a class="nav-link" href="<?= site_url('game_genres') ?>">Žánry her</a>
-                        <a class="nav-link" href="">Vývojáři</a>
+                        <a class="nav-link" href="<?= site_url('developers') ?>">Vývojáři</a>
                         <a class="nav-link me-5" href="">Hráči</a>
                         <a class="nav-link" href="">👤</a>
                     </div>

@@ -18,3 +18,6 @@ $routes->get('/operating_systems/games/(:num)', 'Operating_systemController::gam
 
 $routes->get('/game_genres', 'Game_genreController::index');
 $routes->get('/game_genres/games/(:num)', 'Game_genreController::games/$1');
+
+$routes->get('/developers', 'DeveloperController::index');
+$routes->get('/developers/games/(:num)', 'DeveloperController::games/$1');
