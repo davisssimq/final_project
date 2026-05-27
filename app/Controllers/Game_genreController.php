@@ -25,6 +25,7 @@ class Game_genreController extends BaseController
     }
     public function games($id)
     {
+        $config = config('Game');
         $databaze = \Config\Database::connect();
         $zanryHer = $databaze->table('game_genre');
         $data['zanrHry'] = $zanryHer->select('name')
@@ -34,7 +35,7 @@ class Game_genreController extends BaseController
         $data['hry'] = $this->gameModel->select('game.*')
         ->join('game_genre_game', 'game_genre_game.game_id_game = game.id_game')
         ->where('game_genre_game.game_genre_id_game_genre', $id)
-        ->paginate(9);
+        ->paginate($config->pagination);
         $data['strankovani'] = $this->gameModel->pager;
         $data['achievementy'] = $this->achievementModel->findAll();
         return view('game genres/games', $data);

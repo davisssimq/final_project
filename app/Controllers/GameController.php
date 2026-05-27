@@ -17,13 +17,14 @@ class GameController extends BaseController
 
     public function index()
     {
+        $config = config('Game');
         $games = $this->gameModel
     ->select('game.*, GROUP_CONCAT(game_genre.name SEPARATOR ", ") AS genre_name')
     ->join('game_genre_game', 'game_genre_game.game_id_game = game.id_game', 'left')
     ->join('game_genre', 'game_genre.id_game_genre = game_genre_game.game_genre_id_game_genre', 'left')
     ->groupBy('game.id_game')
     ->orderBy('game.name', 'ASC')
-    ->paginate(9);
+    ->paginate($config->pagination);
 
         return view('games/index', [
             'title' => 'Hry',

@@ -25,9 +25,10 @@ class DeveloperController extends BaseController
     }
     public function games($id)
     {
+        $config = config('Game');
         $data['vyvojari'] = $this->developerModel->find($id);
         $data['hry'] = $this->gameModel->where('developer_id', $id)
-        ->paginate(9);
+        ->paginate($config->pagination);
         $data['strankovani'] = $this->gameModel->pager;
         $data['achievementy'] = $this->achievementModel->findAll();
         return view('developers/games', $data);

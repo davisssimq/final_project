@@ -36,7 +36,7 @@
                 </p>
 
                 <p class="text-secondary small mb-2">
-                    <?= esc(substr(strip_tags($game['description']), 0, 110)) ?>...
+                    <?= esc(substr(strip_tags($game['description']), 0, 150)) ?>
                 </p>
 
                 <p class="small text-secondary mb-2">

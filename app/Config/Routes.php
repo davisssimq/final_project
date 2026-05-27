@@ -24,3 +24,5 @@ $routes->get('/developers/games/(:num)', 'DeveloperController::games/$1');
 
 $routes->get('/players', 'PlayerController::index');
 $routes->get('/players/games/(:num)', 'PlayerController::games/$1');
+
+$routes->get('/players/(:num)/games/(:num)', 'PlayerController::game/$1/$2');

@@ -1,93 +1,108 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
+
 <title>Domovská stránka</title>
-<section class="py-5">
+
+<section class="py-4">
     <div class="p-5 rounded-4 border border-secondary bg-dark text-light hero-bg">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center g-4">
             <div class="col-lg-8">
-                <h1 class="display-4 fw-bold mb-4">Herní databáze</h1>
-                <p class="lead text-secondary">Webová aplikace zaměřená na evidenci her, hráčů, achievementů a herních
-                    žánrů.</p>
-                <p class="text-secondary">Projekt využívá MySQL databázi a framework CodeIgniter 4. Databáze obsahuje
-                    hry, obrázky, datum vydání, achievementy a propojení mezi hráči a hrami.</p>
-                <div class="d-flex gap-3 flex-wrap mt-4">
-                    <a href="<?= site_url('games') ?>" class="btn btn-primary btn-lg">Zobrazit hry</a>
-                    <a href="<?= site_url('operating_systems') ?>" class="btn btn-outline-light btn-lg">Operační systémy</a>
-                    <a href="<?= site_url('game_genres') ?>" class="btn btn-outline-light btn-lg">Žánry her</a>
-                    <a href="<?= site_url('developers') ?>" class="btn btn-outline-light btn-lg">Vývojáři</a>
+                <p class="text-primary fw-semibold mb-2">Školní databázový projekt</p>
+                <h1 class="display-4 fw-bold mb-3">Herní databáze</h1>
+                <p class="lead text-secondary mb-4">
+                    Jednoduchý web pro evidenci her, hráčů, vývojářů, žánrů a podporovaných operačních systémů.
+                </p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="<?= site_url('games') ?>" class="btn btn-primary btn-lg">Hry</a>
                     <a href="<?= site_url('players') ?>" class="btn btn-outline-light btn-lg">Hráči</a>
+                    <a href="<?= site_url('developers') ?>" class="btn btn-outline-light btn-lg">Vývojáři</a>
+                    <a href="<?= site_url('game_genres') ?>" class="btn btn-outline-light btn-lg">Žánry</a>
+                    <a href="<?= site_url('operating_systems') ?>" class="btn btn-outline-light btn-lg">Systémy</a>
                 </div>
             </div>
+
             <div class="col-lg-4">
                 <div class="card bg-black text-light border-secondary">
                     <div class="card-body p-4">
-                        <h5 class="fw-bold mb-3">Obsah databáze</h5>
-                        <ul class="list-unstyled text-secondary mb-0">
-                            <li class="mb-2">Hry s obrázky, datem vydání a popisem</li>
-                            <li class="mb-2">Achievementy propojené s hrami</li>
-                            <li class="mb-2">Hráčské profily a jejich aktivita</li>
-                            <li>Žánry a vztahy mezi tabulkami</li>
-                        </ul>
+                        <h5 class="fw-bold mb-3">Co databáze obsahuje</h5>
+                        <p class="text-secondary mb-0">
+                            Hry s obrázky a datem vydání, achievementy, hráče,
+                            herní žánry, vývojáře a vazby mezi tabulkami.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <section class="pb-5">
-    <div class="row g-4">
-        <div class="col-md-2 offset-md-1">
-            <div class="card h-100 bg-dark text-light border-secondary">
-                <div class="card-body p-4">
-                    <span class="badge text-bg-primary mb-3">Hry</span>
-                    <h4 class="fw-bold">Přehled her</h4>
-                    <p class="text-secondary mb-0">Prohlížejte a evidujte videohry v databázi. U každé hry lze zobrazit informace jako název, datum vydání, žánr, podporovaný operační systém, vývojář nebo související achievementy</p>
+    <div class="row g-3">
+        <div class="col-md-6 col-lg">
+            <a href="<?= site_url('games') ?>" class="text-decoration-none">
+                <div class="card h-100 bg-dark text-light border-secondary menu-card">
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-primary mb-3">Hry</span>
+                        <h5 class="fw-bold">Přehled her</h5>
+                        <p class="text-secondary mb-0">Seznam her s obrázky, popisem, datem vydání a dalšími údaji.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-2">
-            <div class="card h-100 bg-dark text-light border-secondary">
-                <div class="card-body p-4">
-                    <span class="badge text-bg-primary mb-3">Operační systémy</span>
-                    <h4 class="fw-bold">Přehled operačních systémů</h4>
-                    <p class="text-secondary mb-0">Přehled operačních systémů, na kterých jsou hry dostupné. Evidence umožňuje přiřazení her k platformám, například Windows, Linux, macOS nebo herním systémům</p>
+
+        <div class="col-md-6 col-lg">
+            <a href="<?= site_url('operating_systems') ?>" class="text-decoration-none">
+                <div class="card h-100 bg-dark text-light border-secondary menu-card">
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-primary mb-3">Systémy</span>
+                        <h5 class="fw-bold">Operační systémy</h5>
+                        <p class="text-secondary mb-0">Platformy, na kterých jsou jednotlivé hry dostupné.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-2">
-            <div class="card h-100 bg-dark text-light border-secondary">
-                <div class="card-body p-4">
-                    <span class="badge text-bg-primary mb-3">Žánry her</span>
-                    <h4 class="fw-bold">Přehled herních žánrů</h4>
-                    <p class="text-secondary mb-0">Seznam herních žánrů slouží k lepší organizaci databáze. Hry lze rozdělit například na RPG, akční, strategické, sportovní nebo simulátory</p>
+
+        <div class="col-md-6 col-lg">
+            <a href="<?= site_url('game_genres') ?>" class="text-decoration-none">
+                <div class="card h-100 bg-dark text-light border-secondary menu-card">
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-primary mb-3">Žánry</span>
+                        <h5 class="fw-bold">Žánry her</h5>
+                        <p class="text-secondary mb-0">Rozdělení her podle typu, například RPG, akční nebo strategie.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-2">
-            <div class="card h-100 bg-dark text-light border-secondary">
-                <div class="card-body p-4">
-                    <span class="badge text-bg-primary mb-3">Vývojáři</span>
-                    <h4 class="fw-bold">Přehled vývojářů</h4>
-                    <p class="text-secondary mb-0">Databáze vývojářů obsahuje přehled studií a společností, které vytvořily evidované hry. U každého vývojáře lze zobrazit seznam vytvořených titulů</p>
+
+        <div class="col-md-6 col-lg">
+            <a href="<?= site_url('developers') ?>" class="text-decoration-none">
+                <div class="card h-100 bg-dark text-light border-secondary menu-card">
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-primary mb-3">Vývojáři</span>
+                        <h5 class="fw-bold">Vývojáři</h5>
+                        <p class="text-secondary mb-0">Přehled studií a firem, které hry vytvořily.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="col-md-2">
-            <div class="card h-100 bg-dark text-light border-secondary">
-                <div class="card-body p-4">
-                    <span class="badge text-bg-primary mb-3">Hráči</span>
-                    <h4 class="fw-bold">Přehled hráčů</h4>
-                    <p class="text-secondary mb-0">Správa registrovaných hráčů a jejich herních statistik. Hráči mohou být propojeni s dosaženými achievementy a oblíbenými hrami</p>
+
+        <div class="col-md-6 col-lg">
+            <a href="<?= site_url('players') ?>" class="text-decoration-none">
+                <div class="card h-100 bg-dark text-light border-secondary menu-card">
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-primary mb-3">Hráči</span>
+                        <h5 class="fw-bold">Hráči</h5>
+                        <p class="text-secondary mb-0">Evidence hráčů a her, které jsou s nimi propojené.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
 
 <style>
-.hero-bg {
-    background: linear-gradient(135deg, #111, #050505) !important
-}
+.hero-bg{background:linear-gradient(135deg,#151515,#050505)!important}
+
 </style>
 
 <?= $this->endSection() ?>

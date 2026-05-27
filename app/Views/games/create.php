@@ -1,7 +1,7 @@
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 <title>Přidání hry</title>
-<nav aria-label="breadcrumb">
+<nav aria-label="breadcrumb" class="breadcrumb-box">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Úvod</a></li>
         <li class="breadcrumb-item"><a href="<?= site_url('games') ?>">Hry</a></li>
@@ -24,7 +24,7 @@
         <select name="genre_id" class="form-select" required>
             <option value="" selected disabled>Vyber žánr</option>
             <?php foreach($genres as $genre): ?>
-                <option value="<?= $genre['id_game_genre'] ?>"><?= esc($genre['name']) ?></option>
+            <option value="<?= $genre['id_game_genre'] ?>"><?= esc($genre['name']) ?></option>
             <?php endforeach; ?>
         </select>
     </div>
