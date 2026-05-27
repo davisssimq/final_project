@@ -21,3 +21,6 @@ $routes->get('/game_genres/games/(:num)', 'Game_genreController::games/$1');
 
 $routes->get('/developers', 'DeveloperController::index');
 $routes->get('/developers/games/(:num)', 'DeveloperController::games/$1');
+
+$routes->get('/players', 'PlayerController::index');
+$routes->get('/players/games/(:num)', 'PlayerController::games/$1');

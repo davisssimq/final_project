@@ -57,7 +57,7 @@
                     <a class="nav-link" href="<?= site_url('operating_systems') ?>">Operační Systémy</a>
                     <a class="nav-link" href="<?= site_url('game_genres') ?>">Žánry</a>
                     <a class="nav-link" href="<?= site_url('developers') ?>">Vývojáři</a>
-                    <a class="nav-link" href="">Hráči</a>
+                    <a class="nav-link" href="<?= site_url('players') ?>">Hráči</a>
                     <a class="nav-link" href="">👤</a>
                 </div>
             </div>
