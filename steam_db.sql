@@ -20955,6 +20955,7 @@ INSERT INTO achievement (id_achievement, name, game_id, number_of_people, descri
 ALTER TABLE game_genre_game
 ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
 
+
 ADD created_at DATETIME NULL,
 ADD updated_at DATETIME NULL,
 ADD deleted_at DATETIME NULL;
