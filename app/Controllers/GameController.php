@@ -3,16 +3,22 @@ namespace App\Controllers;
 
 use App\Models\GameModel;
 use App\Models\Game_genreModel;
+use App\Models\Operating_systemModel;
+use App\Models\Game_genre_gameModel;
 
 class GameController extends BaseController
 {
     protected $gameModel;
     protected $game_genreModel;
+    protected $operating_systemModel;
+    protected $game_genre_gameModel;
 
     public function __construct()
     {
         $this->gameModel = new GameModel();
         $this->game_genreModel = new Game_genreModel();
+        $this->operating_systemModel = new Operating_systemModel();
+        $this->game_genre_gameModel = new Game_genre_gameModel();
     }
 
     public function index()
@@ -35,10 +41,9 @@ class GameController extends BaseController
 
     public function create()
     {
-        return view('games/create', [
-            'title' => 'Přidání hry',
-            'genres' => $this->game_genreModel->findAll()
-        ]);
+        $data['zanryHer'] = $this->game_genreModel->findAll();
+        $data['operacniSystemy'] = $this->operating_systemModel->findAll();
+        return view('games/create', $data);
     }
 
     public function store()
@@ -53,11 +58,25 @@ class GameController extends BaseController
 
         $this->gameModel->save([
             'name' => $this->request->getPost('name'),
-            'description' => $this->request->getPost('description'),
+            'developer_id' => 1, //zde nastavit, aby 'developer_id' byl závislý na vývojáři, který vytváří konkrétní hru
             'release_date' => $this->request->getPost('release_date'),
-            'developer_id' => 1,
-            'image' => $imageName
+            'image' => $imageName,
+            'description' => $this->request->getPost('description'),
+            'storage_space' => $this->request->getPost('storage_space')
         ]);
+
+        $newId_game = $this->gameModel->insertID();
+
+        $gameGenres = $this->request->getPost('gameGenres');
+        foreach ($gameGenres as $gameGenre)
+            {
+                $this->game_genre_gameModel->insert([
+                    'game_genre_id_game_genre' => $gameGenre,
+                    'game_id_game' => $newId_game
+                ]);
+            }
+
+        
 
         return redirect()->to('/games')->with('success', 'Game was updated.');
     }

@@ -155,7 +155,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `steam_db`.`game_genre_game` (
   `game_genre_id_game_genre` INT NOT NULL,
   `game_id_game` INT NOT NULL,
-  PRIMARY KEY (`game_genre_id_game_genre`, `game_id_game`),
   INDEX `fk_game_genre_has_game_game1_idx` (`game_id_game` ASC) VISIBLE,
   INDEX `fk_game_genre_has_game_game_genre1_idx` (`game_genre_id_game_genre` ASC) VISIBLE,
   CONSTRAINT `fk_game_genre_has_game_game_genre1`
@@ -20953,8 +20952,9 @@ INSERT INTO achievement (id_achievement, name, game_id, number_of_people, descri
 (3131, 'Sharp Astro Secret Found', 261, 103703, 'Recover the forgotten archive in Astro Bot after changing your strategy mid-run. This achievement is awarded for a specific in-game accomplishment, not for simple menu interaction or random play time.'),
 (3132, 'Astro Bot: Completion Run', 261, 103509, 'Protect the last checkpoint in Astro Bot without losing mission progress. This achievement is awarded for a specific in-game accomplishment, not for simple menu interaction or random play time.');
 
+ALTER TABLE game_genre_game
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
 
-ALTER TABLE game
 ADD created_at DATETIME NULL,
 ADD updated_at DATETIME NULL,
 ADD deleted_at DATETIME NULL;

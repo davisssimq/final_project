@@ -20,16 +20,6 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Žánr</label>
-        <select name="genre_id" class="form-select" required>
-            <option value="" selected disabled>Vyber žánr</option>
-            <?php foreach($genres as $genre): ?>
-            <option value="<?= $genre['id_game_genre'] ?>"><?= esc($genre['name']) ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-
-    <div class="mb-3">
         <label class="form-label">Datum vydání</label>
         <input type="date" name="release_date" class="form-control" required>
     </div>
@@ -42,6 +32,39 @@
     <div class="mb-3">
         <label class="form-label">Popis</label>
         <textarea name="description" class="form-control wysiwyg" rows="8"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Kolik místa hra zabírá</label>
+        <br><input type="number" name="storage_space" min="1" class="form_control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Operační systém</label>
+        <div class="row">
+        <?php foreach($operacniSystemy as $operacniSystem): ?>
+            <div class="col-md-2 mb-2">
+                <div class="card h-100 text-light">
+                    <input type="checkbox" name="operatingSystems[]" value="<?= $operacniSystem['id_operating_system'] ?>" class="checkbox-edit">
+                    <label class="form-label text-center"><?= $operacniSystem['name'] ?></label>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Žánr</label>
+        <div class="row">
+        <?php foreach($zanryHer as $zanrHry): ?>
+            <div class="col-md-2 mb-2">
+                <div class="card h-100 text-light">
+                    <input type="checkbox" name="gameGenres[]" value="<?= $zanrHry['id_game_genre'] ?>" class="checkbox-edit">
+                    <label class="form-label text-center"><?= $zanrHry['name'] ?></label>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        </div>
     </div>
 
     <button class="btn btn-primary">Uložit</button>
