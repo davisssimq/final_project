@@ -207,7 +207,13 @@
                         <a class="nav-link" href="<?= site_url('game_genres') ?>">Žánry</a>
                         <a class="nav-link" href="<?= site_url('developers') ?>">Vývojáři</a>
                         <a class="nav-link" href="<?= site_url('players') ?>">Hráči</a>
-                        <a class="nav-link" href="">👤</a>
+                        <?php $ionAuth = new \IonAuth\Libraries\IonAuth(); ?>
+
+                        <?php if($ionAuth->loggedIn()): ?>
+                        <a class="nav-link" href="<?= site_url('logout') ?>">👤 Odhlásit</a>
+                        <?php else: ?>
+                        <a class="nav-link" href="<?= site_url('login') ?>">👤 Přihlášení</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

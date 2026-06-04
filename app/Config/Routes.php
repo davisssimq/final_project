@@ -26,3 +26,7 @@ $routes->get('/players', 'PlayerController::index');
 $routes->get('/players/games/(:num)', 'PlayerController::games/$1');
 
 $routes->get('/players/(:num)/games/(:num)', 'PlayerController::game/$1/$2');
+
+$routes->get('/login', 'AuthController::login');
+$routes->post('/login', 'AuthController::attemptLogin');
+$routes->get('/logout', 'AuthController::logout');

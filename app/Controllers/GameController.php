@@ -5,6 +5,7 @@ use App\Models\GameModel;
 use App\Models\Game_genreModel;
 use App\Models\Operating_systemModel;
 use App\Models\Game_genre_gameModel;
+use IonAuth\Libraries\IonAuth;
 
 class GameController extends BaseController
 {
@@ -12,6 +13,7 @@ class GameController extends BaseController
     protected $game_genreModel;
     protected $operating_systemModel;
     protected $game_genre_gameModel;
+    protected $ionAuth;
 
     public function __construct()
     {
@@ -19,6 +21,7 @@ class GameController extends BaseController
         $this->game_genreModel = new Game_genreModel();
         $this->operating_systemModel = new Operating_systemModel();
         $this->game_genre_gameModel = new Game_genre_gameModel();
+        $this->ionAuth = new IonAuth();
     }
 
     public function index()
@@ -41,6 +44,8 @@ class GameController extends BaseController
 
     public function create()
     {
+        if (!$this->ionAuth->loggedIn()) {
+            return redirect()->to(site_url('login'))->with('error', 'Nejdřív se musíš přihlásit jako admin.'); }
         $data['zanryHer'] = $this->game_genreModel->findAll();
         $data['operacniSystemy'] = $this->operating_systemModel->findAll();
         return view('games/create', $data);
@@ -48,6 +53,9 @@ class GameController extends BaseController
 
     public function store()
     {
+        if (!$this->ionAuth->loggedIn()) {
+    return redirect()->to(site_url('login'))->with('error', 'Nejdřív se musíš přihlásit jako admin.');
+}
         $image = $this->request->getFile('image');
         $imageName = '';
 
@@ -83,6 +91,9 @@ class GameController extends BaseController
 
     public function edit($id)
     {
+        if (!$this->ionAuth->loggedIn()) {
+    return redirect()->to(site_url('login'))->with('error', 'Nejdřív se musíš přihlásit jako admin.');
+}
         return view('games/edit', [
             'title' => 'Úprava hry',
             'game' => $this->gameModel->find($id),
@@ -92,6 +103,9 @@ class GameController extends BaseController
 
     public function update($id)
     {
+        if (!$this->ionAuth->loggedIn()) {
+    return redirect()->to(site_url('login'))->with('error', 'Nejdřív se musíš přihlásit jako admin.');
+}
         $game = $this->gameModel->find($id);
         $image = $this->request->getFile('image');
         $imageName = $game['image'];
@@ -113,6 +127,9 @@ class GameController extends BaseController
 
     public function delete($id)
     {
+        if (!$this->ionAuth->loggedIn()) {
+    return redirect()->to(site_url('login'))->with('error', 'Nejdřív se musíš přihlásit jako admin.');
+}
         $this->gameModel->delete($id);
         return redirect()->to('/games')->with('success', 'Game was deleted.');
     }
